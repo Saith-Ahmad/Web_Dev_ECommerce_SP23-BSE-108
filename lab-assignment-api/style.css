@@ -1,0 +1,12 @@
+body {
+    background-color: #f8f9fa;
+  }
+  #todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #todo-list li button {
+    margin-left: 10px;
+  }
+  

@@ -1,0 +1,5 @@
+Project 2: Todo List App
+
+The Todo List App is a simple task management application that allows users to add, edit, and delete tasks. It uses local storage to save the tasks so that they remain accessible even after closing the browser. The user interface is built using Bootstrap for responsive design, making it easy to use across devices.
+
+Technologies used: HTML, CSS, JavaScript, Bootstrap

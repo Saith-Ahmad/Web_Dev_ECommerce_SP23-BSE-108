@@ -1,0 +1,5 @@
+Project 3: E-commerce Website
+
+This project is a fully functional e-commerce website with features like product browsing, shopping cart, and checkout. The website is connected to a mock backend API to fetch products, and the design is responsive, making it accessible on both desktop and mobile devices.
+
+Technologies used: HTML, CSS, JavaScript, Bootstrap, MockAPI

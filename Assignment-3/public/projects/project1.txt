@@ -1,0 +1,5 @@
+Project 1: Weather App
+
+This project is a weather forecasting application built using React and an open weather API. It allows users to search for current weather conditions in any city around the world. The app fetches real-time data from the weather API and displays temperature, humidity, and other weather-related information.
+
+Technologies used: React, JavaScript, CSS, OpenWeather API

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .container { width: 90%; margin: 20px auto; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { background-color: #f4f4f4; }
+    .actions { display: flex; gap: 10px; }
+    .btn { padding: 8px 12px; border: none; color: white; cursor: pointer; }
+    .btn-remove { background-color: red; }
+    .btn-checkout { background-color: green; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Cart</h1>
+    <% if (cart && cart.items.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cart.items.forEach(item => { %>
+            <tr>
+              <td><%= item.product.title %></td>
+              <td>$<%= item.product.price %></td>
+              <td><%= item.quantity %></td>
+              <td>$<%= item.product.price * item.quantity %></td>
+              <td>
+                <form action="/cart/remove/<%= item.product._id %>" method="POST">
+                  <button class="btn btn-remove">Remove</button>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <form action="/cart/checkout" method="POST">
+        <button class="btn btn-checkout">Checkout</button>
+      </form>
+    <% } else { %>
+      <p>Your cart is empty.</p>
+    <% } %>
+  </div>
+</body>
+</html>

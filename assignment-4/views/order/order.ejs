@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Orders</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>All Orders</h1>
+    <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: left;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>User</th>
+          <th>Total Amount</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach((order, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= order.userId.name %></td>
+            <td>$<%= order.totalAmount %></td>
+            <td><%= order.status %></td>
+            <td><%= new Date(order.createdAt).toLocaleString() %></td>
+            <td>
+              <a href="/api/admin/orders/<%= order._id %>" class="btn btn-view">View</a>
+              <a href="/api/admin/orders/<%= order._id %>/status" class="btn btn-update-status">Update Status</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

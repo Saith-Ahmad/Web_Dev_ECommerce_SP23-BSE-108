@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Shop</h1>
+    <div class="product-cards"> 
+      <% products.forEach(product => { %>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="<%= product.title %>">
+          <h3><%= product.title %></h3>
+          <p><%= product.description %></p>
+          <p>Price: $<%= product.price %></p>
+          <p>Brand: <%= product.brand %></p>
+          <p>Quantity: <%= product.quantity %></p>
+          <form action="/cart/add" method="POST">
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <button type="submit" class="btn btn-add-to-cart">Add to Cart</button>
+          </form>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

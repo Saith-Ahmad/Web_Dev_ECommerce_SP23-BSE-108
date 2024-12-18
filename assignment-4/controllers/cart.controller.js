@@ -4,7 +4,7 @@ import Product from "../models/products.model.js";
 // Add item to cart
 export const addToCart = async (req, res) => {
   const { productId } = req.params;
-  const userId = req.session.userId; 
+  // const userId = req.session.userId; 
 
   try {
     const product = await Product.findById(productId);
@@ -39,7 +39,7 @@ export const addToCart = async (req, res) => {
 
 // View cart
 export const viewCart = async (req, res) => {
-    const userId = req.session.userId;
+    // const userId = req.session.userId;
   
     try {
       const cart = await Cart.findOne({ user: userId }).populate("items.product");

@@ -17,19 +17,19 @@ server.use(cors());
 server.use(express.json());     
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static("public")); 
-server.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-server.use(flash());
-server.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  next();
-});
+// server.use(
+//   session({
+//     secret: process.env.SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// );
+// server.use(flash());
+// server.use((req, res, next) => {
+//   res.locals.success = req.flash("success");
+//   res.locals.error = req.flash("error");
+//   next();
+// });
 
 
 //Route paths
